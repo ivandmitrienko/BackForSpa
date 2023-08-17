@@ -4,16 +4,24 @@ const Schema = mongoose.Schema;
 const app = express();
 const jsonParser = express.json();
 
+const {
+  getProduct, 
+  getProducts, 
+  saveProduct, 
+  deleteProduct, 
+  updateProduct
+} = require("./controllers/controllers")
+
 const productScheme = new Schema(
   {
-    nameOfProduct: string,
-    nameOfPrice: number,
-    image: string,
-    count: number,
+    nameOfProduct: String,
+    nameOfPrice: Number,
+    image: String,
+    count: Number,
   },
   { versionKey: false }
 );
-const Product = mongoose.model("Product", userScheme);
+const Product = mongoose.model("Product", productScheme);
 
 // app.use(express.static(__dirname + "/public"));
 
