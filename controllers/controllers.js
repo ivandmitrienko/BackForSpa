@@ -56,3 +56,5 @@ const updateProduct = async (req, res) => {
   if (product) res.send(product);
   else res.sendStatus(404);
 };
+
+module.exports = {getProducts, getProduct, saveProduct, deleteProduct, updateProduct};
